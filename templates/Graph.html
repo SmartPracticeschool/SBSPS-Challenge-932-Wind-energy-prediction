@@ -1,0 +1,278 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graph</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {
+  height:100%;
+  line-height: 1.8;
+}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="Webpage.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> previous page</a>
+      </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="Webpage.html" onclick="w3_close()" class="w3-bar-item w3-button">previous page</a>
+</nav>
+</div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 23</div>
+  <img src="../static/timeseries2.png" style="width:100%">
+  </div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 23</div>
+  <img src="../static/Scatterplot windspeed vs LV.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 23</div>
+  <img src="../static/Scatterplot LV vs TH.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">5 / 23</div>
+  <img src="../static/Scatterplot dt vs thpower.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">6 / 23</div>
+  <img src="../static/Scatterplot dt vs LV.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 23</div>
+  <img src="../static/pairplot.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">8 / 23</div>
+  <img src="../static/lineplot wind vs theo.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">9 / 23</div>
+  <img src="../static/lineplot LV vs theo.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">10 / 23</div>
+  <img src="../static/lineplot dt vs theo.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">11 / 23</div>
+  <img src="../static/lineplot dt vs LV.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">12 / 23</div>
+  <img src="../static/joint THEO vs WindDirection.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">13 / 23</div>
+  <img src="../static/joint LV vs THEO.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">14 / 23</div>
+  <img src="../static/heatmap.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">15 / 23</div>
+  <img src="../static/datavizwindspeed.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">16 / 23</div>
+  <img src="../static/datavizwinddirec.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">17 / 23</div>
+  <img src="../static/datavizTHEO.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">18 / 23</div>
+  <img src="../static/datavizLVactive.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">19 / 23</div>
+  <img src="../static/dataviz of all.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">20 / 23</div>
+  <img src="../static/boxplotWindSpeed.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">21 / 23</div>
+  <img src="../static/boxplotWindDirection.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">22 / 23</div>
+  <img src="../static/boxplotTHEOR.png" style="width:100%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">23 / 23</div>
+  <img src="../static/boxplotLVPower.png" style="width:100%">
+  </div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>  
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span> 
+  <span class="dot" onclick="currentSlide(9)"></span> 
+  <span class="dot" onclick="currentSlide(10)"></span> 
+  <span class="dot" onclick="currentSlide(11)"></span> 
+  <span class="dot" onclick="currentSlide(12)"></span> 
+  <span class="dot" onclick="currentSlide(13)"></span> 
+  <span class="dot" onclick="currentSlide(14)"></span> 
+  <span class="dot" onclick="currentSlide(15)"></span> 
+  <span class="dot" onclick="currentSlide(16)"></span> 
+  <span class="dot" onclick="currentSlide(17)"></span> 
+  <span class="dot" onclick="currentSlide(18)"></span> 
+  <span class="dot" onclick="currentSlide(19)"></span> 
+  <span class="dot" onclick="currentSlide(20)"></span> 
+  <span class="dot" onclick="currentSlide(21)"></span> 
+  <span class="dot" onclick="currentSlide(22)"></span> 
+  <span class="dot" onclick="currentSlide(23)"></span> 
+
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 

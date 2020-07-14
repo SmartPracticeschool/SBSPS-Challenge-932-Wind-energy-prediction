@@ -1,0 +1,348 @@
+<html>
+<title>Wind Energy Prediction</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway"}
+
+body, html {
+  height:100%;
+  background-image: url("C:/Users/Janakiram J/Desktop/photos/ibm/ibm/ml/static/winde.jpg");
+  line-height: 1.6;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding: 25px 20px 75px;
+}
+
+/* Add a card effect for articles */
+.card {
+ 
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #000000;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+}
+.w3-bar .w3-button {
+padding: 16px;
+}
+</style>
+<body>
+<!-- Navbar (sit on top) -->
+    <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"> <b>WIND ENERGY PREDICTION</b></a>
+<!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+      </div>
+   <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+   <i class="fa fa-bars"></i>
+   </a>
+   </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="about.html" onclick="w3_close()"class="w3-bar-item w3-button">ABOUT</a>
+  <a href="work.html" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+</nav>
+<div class="w3-container" id="about">
+<div class="row">
+      <div class="leftcolumn">
+      <div class="card">
+      <h2> <b>ABOUT </b> </h2>
+      <div> <img src="../static/img1.jpg"style="height:500px;width:900px"> </div>
+      <p><b>Wind energy</b> plays an increasing role in the supply of energy world-wide. The energy output of a wind farm is dependent on the wind conditions present at its site. If the output can be predicted more accurately, energy suppliers can coordinate the collaborative production of different energy sources more efficiently to avoid costly overproduction.Renewable energy, such as wind and solar energy, plays an increasing role in the supply of energy world wide. This trend will continue because global energy demand is increasing, and the use of nuclear power and traditional sources of energy such as coal and oil is either considered unsafe or leads to a large amount of CO2 emission. Wind energy is a key player in renewable energy. The capacity of wind energy production has been substantially increased during the last years. In particular, wind speed is crucial for energy production based on wind, and it may vary drastically over time. Energy suppliers are interested in accurate predictions, as they can           avoid overproduction by coordinating the collaborative production of traditional power plants and weather-dependent energy sources. </p>
+      </div>
+<div class="w3-container" id="work"></div>
+      <div class="card">
+      <h2><b>WORK</b></h2>
+      <p>We have used Machine learning(Python v3.7) for backend works.The machine learning algorithms are used for splitting the dataset, testing and training of dataset, Data visuaization, Model building and Model Evaluation. for various graphs we have imported several libraries for the plotting such as Box plot, joint plot, line plot, scatter plot, time seriesmodel with various comparisons. for Frontend we used HTML, css code and for website is displayed using flask. </p>   
+      </div>
+      </div>
+<div class="rightcolumn">
+    <div class="card">
+    <h3><b>Prediction</b></h3>
+    <form>
+      <label for="lv">LV Power:</label><br>
+      <input type="number" id="lv"><br>
+      <label for="th">Wind Speed:</label><br>
+      <input type="number" id="ws"><br>
+      <label for="ws">Wind Direction:</label><br>
+      <input type="number" id="wd"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+   </div>
+       <br>
+   <br>
+   {{ Prediction_text }}
+<br>
+{{LV}}
+<div class="card">
+      <h2><b>Graph</b></h2>
+      <div class="slideshow-container">
+      <div class="mySlides fade">
+      <div class="numbertext">1 / 23</div>
+      <img src="../static/timeseries1.png" style="width:115%">
+      </div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 23</div>
+  <img src="../static/timeseries2.png" style="width:115%">
+  </div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 23</div>
+  <img src="../static/Scatterplot windspeed vs LV.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 23</div>
+  <img src="../static/Scatterplot LV vs TH.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">5 / 23</div>
+  <img src="../static/Scatterplot dt vs thpower.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">6 / 23</div>
+  <img src="../static/Scatterplot dt vs LV.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 23</div>
+  <img src="../static/pairplot.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">8 / 23</div>
+  <img src="../static/lineplot wind vs theo.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">9 / 23</div>
+  <img src="../static/lineplot LV vs theo.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">10 / 23</div>
+  <img src="../static/lineplot dt vs theo.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">11 / 23</div>
+  <img src="../static/lineplot dt vs LV.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">12 / 23</div>
+  <img src="../static/joint THEO vs WindDirection.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">13 / 23</div>
+  <img src="../static/joint LV vs THEO.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">14 / 23</div>
+  <img src="../static/heatmap.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">15 / 23</div>
+  <img src="../static/datavizwindspeed.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">16 / 23</div>
+  <img src="../static/datavizwinddirec.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">17 / 23</div>
+  <img src="../static/datavizTHEO.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">18 / 23</div>
+  <img src="../static/datavizLVactive.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">19 / 23</div>
+  <img src="../static/dataviz of all.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">20 / 23</div>
+  <img src="../static/boxplotWindSpeed.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">21 / 23</div>
+  <img src="../static/boxplotWindDirection.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">22 / 23</div>
+  <img src="../static/boxplotTHEOR.png" style="width:115%">
+  </div>
+<div class="mySlides fade">
+  <div class="numbertext">23 / 23</div>
+  <img src="../static/boxplotLVPower.png" style="width:115%">
+  </div>
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<p>Please follow <a href="graph.html">this link to view graph</a>.</p>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+  </div>
+  </div>
+</div>
+</body>
+</html>
